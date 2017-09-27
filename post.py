@@ -51,8 +51,9 @@ uuid: {}
 ---
 {}""".format(note_list[idx].title, note_list[idx].created.strftime('%Y-%m-%d %H:%M:%S +0900'), ' '.join(tags), note_list[idx].id, '\n'.join(note_list[idx].text.split("\n")[1:-1])))
 
+suffix_dir = "./posts/"
 fn = note_list[idx].created.strftime('%Y-%m-%d-')+title_to_filename(note_list[idx].title)
-f = open(fn, "wb")
+f = open("{}{}".format(suffix_dir, fn), "wb")
 
 from imgurpython import ImgurClient
 import credentials
